@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="bingbot" content="noindex, nofollow">
+  <meta name="Twitterbot" content="noindex, nofollow">
+  <meta name="GPTBot" content="noindex, nofollow">
+  <meta name="ChatGPT-User" content="noindex, nofollow">
+  <meta name="Google-Extended" content="noindex, nofollow">
+  <meta name="CCBot" content="noindex, nofollow">
+  <meta name="anthropic-ai" content="noindex, nofollow">
+  <meta name="Claude-Web" content="noindex, nofollow">
+  <meta name="GoogleOther" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+  <title>小妲的白痴贡n问卷2.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+      background: #050303;
+      color: #f0e6d0;
+      line-height: 1.5;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 90% 60% at 50% 20%, rgba(120, 15, 25, 0.45) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 50% at 50% 80%, rgba(60, 10, 15, 0.35) 0%, transparent 50%),
+        linear-gradient(180deg, #0a0404 0%, #050303 40%, #030202 100%);
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(201, 162, 39, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(196, 30, 58, 0.04) 0%, transparent 40%);
+      z-index: -1;
+      pointer-events: none;
+      animation: ambientPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes ambientPulse {
+      0% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+
+    /* ========== 封面 ========== */
+    #coverPage {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #050303;
+      cursor: pointer;
+      overflow: hidden;
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+
+    #coverPage.exiting {
+      opacity: 0;
+      transform: scale(1.08);
+      pointer-events: none;
+    }
+
+    #coverPage.hidden {
+      display: none !important;
+    }
+
+    .cover-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://files.catbox.moe/mnxjss.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 1;
+      filter: brightness(1.15) contrast(1.05) saturate(1.1);
+    }
+
+    .cover-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        ellipse 85% 75% at 50% 40%,
+        rgba(5, 3, 3, 0.05) 0%,
+        rgba(5, 3, 3, 0.25) 50%,
+        rgba(5, 3, 3, 0.55) 100%
+      );
+    }
+
+    .cover-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 24px 20px;
+      max-width: 92vw;
+    }
+
+    .cover-title {
+      font-size: clamp(22px, 6.5vw, 32px);
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #fff8e0;
+      line-height: 1.35;
+      margin-bottom: 18px;
+      /* 多层霓虹：白内光 + 金霓虹 + 红外光 */
+      text-shadow:
+        0 2px 8px rgba(0,0,0,0.85),
+        0 0 4px #ffffff,
+        0 0 10px #ffffff,
+        0 0 18px rgba(255, 248, 220, 0.9),
+        0 0 28px rgba(232, 192, 64, 0.85),
+        0 0 42px rgba(201, 162, 39, 0.7),
+        0 0 60px rgba(196, 30, 58, 0.55),
+        0 0 80px rgba(180, 20, 40, 0.35);
+      animation: titleFloat 3.2s ease-in-out infinite alternate, titleBrightness 2.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes titleFloat {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+
+    @keyframes titleBrightness {
+      0% {
+        filter: brightness(0.92);
+        text-shadow:
+          0 0 4px #ffffff,
+          0 0 10px #ffffff,
+          0 0 18px rgba(255, 248, 220, 0.75),
+          0 0 28px rgba(232, 192, 64, 0.7),
+          0 0 42px rgba(201, 162, 39, 0.55),
+          0 0 60px rgba(196, 30, 58, 0.4),
+          0 0 80px rgba(180, 20, 40, 0.25);
+      }
+      100% {
+        filter: brightness(1.15);
+        text-shadow:
+          0 0 6px #ffffff,
+          0 0 14px #ffffff,
+          0 0 24px rgba(255, 248, 220, 1),
+          0 0 36px rgba(232, 192, 64, 0.95),
+          0 0 52px rgba(201, 162, 39, 0.85),
+          0 0 72px rgba(196, 30, 58, 0.7),
+          0 0 95px rgba(180, 20, 40, 0.45);
+      }
+    }
+
+    .cover-line {
+      width: 60%;
+      max-width: 280px;
+      height: 2px;
+      margin: 0 auto 28px;
+      border-radius: 2px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        #ffffff 15%,
+        #e8c040 40%,
+        #c9a227 55%,
+        #c41e3a 80%,
+        transparent 100%
+      );
+      box-shadow:
+        0 0 8px rgba(255, 255, 255, 0.6),
+        0 0 16px rgba(232, 192, 64, 0.7),
+        0 0 28px rgba(196, 30, 58, 0.5);
+      animation: linePulse 2.4s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    @keyframes linePulse {
+      0% {
+        width: 40%;
+        opacity: 0.55;
+        box-shadow:
+          0 0 6px rgba(255, 255, 255, 0.4),
+          0 0 12px rgba(232, 192, 64, 0.5),
+          0 0 20px rgba(196, 30, 58, 0.35);
+      }
+      50% {
+        width: 72%;
+        opacity: 1;
+        box-shadow:
+          0 0 10px rgba(255, 255, 255, 0.8),
+          0 0 22px rgba(232, 192, 64, 0.9),
+          0 0 36px rgba(196, 30, 58, 0.65);
+      }
+      100% {
+        width: 40%;
+        opacity: 0.55;
+        box-shadow:
+          0 0 6px rgba(255, 255, 255, 0.4),
+          0 0 12px rgba(232, 192, 64, 0.5),
+          0 0 20px rgba(196, 30, 58, 0.35);
+      }
+    }
+
+    .cover-enter {
+      font-size: clamp(14px, 4vw, 17px);
+      font-weight: 500;
+      letter-spacing: 3px;
+      color: #f0c060;
+      margin-top: 8px;
+      text-shadow:
+        0 0 8px rgba(232, 192, 64, 0.8),
+        0 0 18px rgba(196, 30, 58, 0.5),
+        0 0 28px rgba(201, 162, 39, 0.4);
+      animation: enterBreathe 2.2s ease-in-out infinite;
+    }
+
+    @keyframes enterBreathe {
+      0%, 100% {
+        opacity: 0.55;
+        transform: scale(0.96);
+        text-shadow:
+          0 0 6px rgba(232, 192, 64, 0.5),
+          0 0 12px rgba(196, 30, 58, 0.35);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.04);
+        text-shadow:
+          0 0 10px rgba(232, 192, 64, 0.95),
+          0 0 22px rgba(196, 30, 58, 0.7),
+          0 0 36px rgba(201, 162, 39, 0.45);
+      }
+    }
+
+    /* ========== 加载页 ========== */
+    #loadingScreen {
+      position: fixed;
+      inset: 0;
+      z-index: 10001;
+      background: radial-gradient(
+        ellipse 80% 55% at 50% 28%,
+        rgba(90, 20, 25, 0.7) 0%,
+        rgba(20, 6, 8, 0.95) 50%,
+        #050303 100%
+      );
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    #loadingScreen.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .load-title {
+      font-size: 18px;
+      color: #e8c040;
+      text-shadow: 0 0 16px rgba(232, 192, 64, 0.5);
+      margin-bottom: 24px;
+      letter-spacing: 2px;
+    }
+
+    .load-bar-wrap {
+      width: 100%;
+      max-width: 280px;
+      height: 8px;
+      background: rgba(40, 20, 15, 0.85);
+      border-radius: 4px;
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .load-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #8b1a1a, #c41e3a, #e8c040);
+      box-shadow: 0 0 12px rgba(196, 30, 58, 0.55);
+      border-radius: 4px;
+      transition: width 0.25s ease;
+    }
+
+    .load-text {
+      font-size: 13px;
+      color: #9a8060;
+    }
+
+    .load-tip {
+      font-size: 12px;
+      color: #706050;
+      margin-top: 16px;
+      text-align: center;
+      max-width: 280px;
+    }
+
+    /* ========== 主容器：严格适配视口，禁止滚动 ========== */
+    .app-shell {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: stretch;
+      padding: 0;
+      visibility: visible;
+      overflow: hidden;
+    }
+
+    .panel {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      max-height: 100%;
+      border-radius: 0;
+      background: linear-gradient(165deg,
+        rgba(28, 10, 12, 0.97) 0%,
+        rgba(16, 6, 8, 0.98) 45%,
+        rgba(8, 3, 4, 1) 100%
+      );
+      /* 大边框：金红双层描边 + 外发光，避免全屏像 bug */
+      border: 3px solid #c9a227;
+      box-shadow:
+        inset 0 0 0 1px rgba(232, 192, 64, 0.45),
+        inset 0 0 0 4px rgba(20, 8, 8, 0.9),
+        inset 0 0 0 6px rgba(196, 30, 58, 0.55),
+        inset 0 0 28px rgba(120, 20, 30, 0.25),
+        0 0 0 1px rgba(180, 40, 50, 0.5),
+        0 0 24px rgba(201, 162, 39, 0.35),
+        0 0 48px rgba(196, 30, 58, 0.2);
+      padding: 18px 20px 20px;
+      padding-top: max(18px, env(safe-area-inset-top));
+      padding-bottom: max(18px, env(safe-area-inset-bottom));
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-sizing: border-box;
+    }
+
+    .panel.intense {
+      border-color: #e05070;
+      box-shadow:
+        inset 0 0 0 1px rgba(232, 192, 64, 0.5),
+        inset 0 0 0 4px rgba(20, 8, 8, 0.9),
+        inset 0 0 0 6px rgba(224, 80, 112, 0.65),
+        inset 0 0 32px rgba(196, 30, 58, 0.3),
+        0 0 0 1px rgba(196, 30, 58, 0.6),
+        0 0 28px rgba(196, 30, 58, 0.45),
+        0 0 56px rgba(201, 162, 39, 0.25);
+    }
+
+    /* 顶部装饰条 */
+    .panel-top-accent {
+      position: absolute;
+      top: 3px;
+      left: 8%;
+      right: 8%;
+      height: 2px;
+      background: linear-gradient(90deg,
+        transparent,
+        rgba(232, 192, 64, 0.65) 15%,
+        rgba(196, 30, 58, 0.85) 50%,
+        rgba(232, 192, 64, 0.65) 85%,
+        transparent
+      );
+      box-shadow: 0 0 12px rgba(196, 30, 58, 0.5);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* 分隔线 */
+    .divider {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 240px;
+      height: 16px;
+      margin: 0 auto 12px;
+      flex-shrink: 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        #8b1a1a 20%,
+        #c41e3a 50%,
+        #8b1a1a 80%,
+        transparent 100%
+      );
+      box-shadow: 0 0 6px rgba(196, 30, 58, 0.5);
+    }
+
+    .divider-diamond {
+      width: 10px;
+      height: 10px;
+      margin: 0 6px;
+      background: linear-gradient(135deg, #e8c040, #c9a227);
+      transform: rotate(45deg);
+      box-shadow:
+        0 0 10px rgba(201, 162, 39, 0.7),
+        inset 0 0 3px rgba(255, 230, 150, 0.4);
+      border: 1px solid #f5d060;
+      flex-shrink: 0;
+    }
+
+    /* 开始页 */
+    .start-panel {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+      padding: 4px 0;
+    }
+
+    .start-panel h1 {
+      font-size: clamp(16px, 4.5vw, 20px);
+      font-weight: 700;
+      color: #e8c040;
+      text-shadow: 0 0 16px rgba(232, 192, 64, 0.45);
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+
+    .disclaimer {
+      margin: 8px 0;
+      padding: 10px 12px;
+      background: rgba(18, 6, 8, 0.75);
+      border: 1px solid rgba(100, 30, 30, 0.4);
+      border-radius: 6px;
+      font-size: 11px;
+      color: #8a7060;
+      line-height: 1.65;
+      text-align: left;
+      flex-shrink: 0;
+      max-height: 28vh;
+      overflow: hidden;
+    }
+
+    .disclaimer strong {
+      color: #c9a84c;
+      font-weight: 500;
+    }
+
+    .game-btn {
+      min-width: 120px;
+      height: 42px;
+      padding: 0 22px;
+      background: linear-gradient(180deg, #2a1c10 0%, #161008 100%);
+      border: 1px solid #c9a227;
+      border-radius: 4px;
+      color: #e8d090;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow:
+        0 0 0 1px rgba(201, 162, 39, 0.2),
+        0 0 12px rgba(201, 162, 39, 0.15),
+        inset 0 1px 0 rgba(255, 220, 120, 0.1);
+      font-family: inherit;
+      margin-top: 12px;
+      flex-shrink: 0;
+    }
+
+    .game-btn:hover,
+    .game-btn.selected {
+      background: linear-gradient(180deg, #3a2818 0%, #22180c 100%);
+      border-color: #f0c040;
+      color: #ffe9a0;
+      box-shadow:
+        0 0 18px rgba(201, 162, 39, 0.5),
+        0 0 0 1px rgba(240, 192, 64, 0.35),
+        inset 0 1px 0 rgba(255, 230, 140, 0.2);
+    }
+
+    .game-btn:active {
+      transform: scale(0.96);
+    }
+
+    /* 其它作品链接 */
+    .works-links {
+      margin-top: 14px;
+      padding: 10px 12px;
+      background: rgba(12, 5, 6, 0.6);
+      border: 1px solid rgba(90, 30, 30, 0.35);
+      border-radius: 6px;
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    .works-title {
+      font-size: 11px;
+      color: #9a8060;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+
+    .works-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .works-list a {
+      font-size: 12px;
+      color: #e8c040;
+      text-decoration: none;
+      padding: 4px 0;
+      transition: all 0.2s ease;
+      text-shadow: 0 0 8px rgba(232, 192, 64, 0.3);
+    }
+
+    .works-list a:hover {
+      color: #ffe9a0;
+      text-shadow: 0 0 12px rgba(232, 192, 64, 0.6);
+    }
+
+    /* 答题页 */
+    #quizPage {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    #quizPage.hidden {
+      display: none !important;
+    }
+
+    .q-title {
+      font-size: clamp(14px, 4.2vw, 17px);
+      font-weight: 500;
+      color: #f0e6d0;
+      margin-bottom: 12px;
+      line-height: 1.55;
+      flex-shrink: 0;
+      max-height: 24vh;
+      overflow: hidden;
+    }
+
+    .q-img-wrap {
+      text-align: center;
+      margin-bottom: 10px;
+      flex-shrink: 1;
+      min-height: 0;
+      max-height: 38vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .q-img-wrap.hidden {
+      display: none !important;
+    }
+
+    .q-img {
+      max-width: 100%;
+      max-height: 36vh;
+      width: auto;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      box-shadow: 0 0 14px rgba(201, 162, 39, 0.2);
+      object-fit: contain;
+    }
+
+    .pay-imgs {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      flex-shrink: 1;
+      min-height: 0;
+      max-height: 28vh;
+    }
+
+    .pay-imgs.hidden {
+      display: none !important;
+    }
+
+    .pay-img {
+      max-width: 160px;
+      max-height: 26vh;
+      border-radius: 5px;
+      border: 1px solid rgba(201, 162, 39, 0.4);
+      box-shadow: 0 0 10px rgba(201, 162, 39, 0.25);
+      object-fit: contain;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .options.hidden {
+      display: none !important;
+    }
+
+    .opt-btn {
+      width: 100%;
+      min-height: 44px;
+      padding: 11px 16px;
+      background: linear-gradient(180deg, #1f1810 0%, #120e08 100%);
+      border: 1px solid #c9a227;
+      border-radius: 4px;
+      color: #e8d090;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      box-shadow:
+        0 0 0 1px rgba(201, 162, 39, 0.12),
+        inset 0 1px 0 rgba(255, 220, 120, 0.05);
+      text-align: left;
+      font-family: inherit;
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+      flex-shrink: 0;
+    }
+
+    .opt-btn:hover {
+      background: linear-gradient(180deg, #2e2414 0%, #1c160c 100%);
+      border-color: #f0c040;
+      color: #ffe9a0;
+      box-shadow:
+        0 0 14px rgba(201, 162, 39, 0.45),
+        0 0 0 1px rgba(240, 192, 64, 0.25),
+        inset 0 1px 0 rgba(255, 230, 140, 0.12);
+    }
+
+    .opt-btn:active {
+      transform: scale(0.97);
+    }
+
+    .opt-btn.selected {
+      background: linear-gradient(180deg, #3a2c18 0%, #241a0e 100%);
+      border-color: #f0c040;
+      color: #ffe9a0;
+      box-shadow:
+        0 0 18px rgba(201, 162, 39, 0.55),
+        0 0 0 1px rgba(240, 192, 64, 0.35),
+        inset 0 1px 0 rgba(255, 230, 140, 0.18);
+      animation: selectPulse 0.4s ease;
+    }
+
+    .opt-btn.selected::after {
+      content: '✓';
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #f0c040;
+      font-size: 14px;
+      text-shadow: 0 0 8px rgba(240, 192, 64, 0.7);
+    }
+
+    @keyframes selectPulse {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.02); }
+      100% { transform: scale(1); }
+    }
+
+    .opt-btn.flash {
+      animation: btnFlash 0.3s ease;
+    }
+
+    @keyframes btnFlash {
+      0% { box-shadow: 0 0 0 0 rgba(240, 192, 64, 0.6); }
+      50% { box-shadow: 0 0 20px 4px rgba(240, 192, 64, 0.4); }
+      100% { box-shadow: 0 0 14px rgba(201, 162, 39, 0.45); }
+    }
+
+    .image-option-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 6px;
+      overflow: hidden;
+    }
+
+    .image-option-btn img {
+      max-width: 100%;
+      max-height: 100px;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    .img-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .img-options.hidden {
+      display: none !important;
+    }
+
+    .img-opt {
+      width: 120px;
+      height: 120px;
+      border-radius: 6px;
+      border: 1.5px solid #c9a227;
+      background: linear-gradient(180deg, #241c12 0%, #14100a 100%);
+      box-shadow:
+        0 0 0 1px rgba(201, 162, 39, 0.15),
+        inset 0 1px 0 rgba(255, 220, 120, 0.06);
+      cursor: pointer;
+      overflow: hidden;
+      transition: all 0.2s ease;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .img-opt img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .img-opt:hover {
+      border-color: #f0c040;
+      box-shadow: 0 0 16px rgba(201, 162, 39, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .img-opt:active {
+      transform: scale(0.94);
+    }
+
+    .img-opt.clicked {
+      animation: selectPulse 0.35s ease;
+      border-color: #f0c040;
+      box-shadow: 0 0 20px rgba(201, 162, 39, 0.6);
+    }
+
+    .nav-btns {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      min-width: 80px;
+      height: 34px;
+      padding: 0 14px;
+      background: linear-gradient(180deg, #1f1810 0%, #120e08 100%);
+      border: 1px solid #c9a227;
+      border-radius: 4px;
+      color: #e8d090;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 0 0 1px rgba(201, 162, 39, 0.15);
+      font-family: inherit;
+    }
+
+    .lang-btn:hover {
+      background: linear-gradient(180deg, #2e2414 0%, #1c160c 100%);
+      border-color: #f0c040;
+      color: #ffe9a0;
+    }
+
+    .lang-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .hint {
+      font-size: 11px;
+      color: #605040;
+      margin-top: 6px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    /* 结果页 */
+    .result-panel {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+      padding: 8px 0;
+    }
+
+    .result-panel.hidden {
+      display: none !important;
+    }
+
+    .result-panel h1 {
+      font-size: clamp(18px, 5vw, 22px);
+      font-weight: 700;
+      color: #e8c040;
+      text-shadow: 0 0 16px rgba(232, 192, 64, 0.45);
+      margin-bottom: 4px;
+    }
+
+    .result-msg {
+      font-size: 13px;
+      color: #e05070;
+      text-shadow: 0 0 10px rgba(224, 80, 112, 0.35);
+      margin: 8px 0 12px;
+    }
+
+    /* 特效层 */
+    #fx-layer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      pointer-events: auto;
+      overflow: hidden;
+    }
+    #fx-layer.show { display: block; }
+
+    .fx-black {
+      position: absolute;
+      inset: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .fx-black .fx-msg {
+      color: #e8c040;
+      font-size: 1.15rem;
+      letter-spacing: 3px;
+      text-align: center;
+      padding: 0 24px;
+      line-height: 1.7;
+      animation: fadeInScale 0.5s ease;
+      text-shadow: 0 0 20px rgba(201, 162, 39, 0.7);
+    }
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .fx-rain {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, #8b1a1a 0%, #5c1010 40%, #1a0808 100%);
+      overflow: hidden;
+    }
+    .fx-rain .rain-item {
+      position: absolute;
+      color: rgba(255, 230, 150, 0.9);
+      font-size: 0.85rem;
+      white-space: nowrap;
+      animation: rainFall linear forwards;
+      text-shadow: 0 0 8px rgba(0,0,0,0.4);
+      pointer-events: none;
+    }
+    @keyframes rainFall {
+      0% { transform: translateY(-40px) rotate(-8deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 0.9; }
+      100% { transform: translateY(110vh) rotate(6deg); opacity: 0; }
+    }
+
+    .fx-heartbeat {
+      position: absolute;
+      inset: 0;
+      background: rgba(8, 3, 3, 0.93);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .fx-heartbeat .fx-msg {
+      color: #e05070;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-align: center;
+      line-height: 1.7;
+      padding: 0 24px;
+      animation: heartbeat 0.7s ease-in-out infinite;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.05); opacity: 1; text-shadow: 0 0 24px rgba(224, 80, 112, 0.85); }
+    }
+
+    .watch-layer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 5;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .watch-layer .watch-item {
+      position: absolute;
+      color: rgba(201, 162, 39, 0.28);
+      font-size: 0.7rem;
+      white-space: nowrap;
+      animation: watchDrift 9s linear infinite;
+      user-select: none;
+    }
+    @keyframes watchDrift {
+      0% { transform: translateY(0) translateX(0); opacity: 0; }
+      15% { opacity: 0.55; }
+      85% { opacity: 0.35; }
+      100% { transform: translateY(-130px) translateX(18px); opacity: 0; }
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 400px) {
+      .panel { padding: 12px 12px 10px; }
+      .opt-btn { font-size: 12px; padding: 8px 12px; min-height: 36px; }
+      .img-opt { width: 85px; height: 85px; }
+      .pay-img { max-width: 110px; }
+      .q-title { font-size: 13px; }
+    }
+
+    @media (max-height: 600px) {
+      .q-img { max-height: 28vh; }
+      .q-img-wrap { max-height: 30vh; }
+      .pay-img { max-height: 20vh; }
+      .pay-imgs { max-height: 22vh; }
+      .q-title { max-height: 20vh; font-size: 13px; }
+      .disclaimer { max-height: 24vh; font-size: 11px; }
+      .opt-btn { min-height: 38px; padding: 8px 12px; font-size: 13px; }
+      .img-opt { width: 100px; height: 100px; }
+    }
+  </style>
+</head>
+<body style="margin:0;background:#050303;color:#f0e6d0;">
+  <!-- 特效层 -->
+  <div id="fx-layer"></div>
+
+  <!-- 封面：加载完成后再显示 -->
+  <div id="coverPage" style="background:#050303;">
+    <div class="cover-bg"></div>
+    <div class="cover-content">
+      <div class="cover-title">小妲的白痴贡n问卷2.0</div>
+      <div class="cover-line"></div>
+      <div class="cover-enter">点击屏幕进入</div>
+    </div>
+  </div>
+
+  <!-- 加载页 -->
+  <div id="loadingScreen" style="background:#050303;">
+    <div class="load-title">资源加载中</div>
+    <div class="load-bar-wrap">
+      <div class="load-bar" id="loadBar"></div>
+    </div>
+    <div class="load-text" id="loadText">0%</div>
+    <div class="load-tip" id="loadTip">正在预加载图片与资源，请稍候…</div>
+  </div>
+
+  <!-- 背景音乐 -->
+  <audio id="bgm" loop preload="auto">
+    <source src="https://files.catbox.moe/5plhe0.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- 主壳层 -->
+  <div class="app-shell" id="appShell">
+    <div class="panel" id="mainPanel">
+      <div class="panel-top-accent"></div>
+
+      <!-- 开始页 -->
+      <div id="startPage" class="start-panel">
+        <h1>小妲的白痴贡n问卷2.0</h1>
+        <div class="divider">
+          <div class="divider-diamond"></div>
+        </div>
+        <div class="disclaimer">
+          <strong>【免责声明】</strong><br>
+          本内容仅供年满18岁且拥有自主思考能力的自愿参与者娱乐使用。<br>
+          若感到不适，请立即停止。<br>
+          继续游玩即表示你已年满18岁，且自愿游玩。
+        </div>
+        <button class="game-btn selected" id="startBtn">开始</button>
+        <div class="works-links">
+          <div class="works-title">小妲的其它作品</div>
+          <div class="works-list">
+            <a href="https://ten-ten-dusky.vercel.app/" target="_blank" rel="noopener">小妲的十日贡奴训练</a>
+            <a href="https://yindao-liard.vercel.app/" target="_blank" rel="noopener">小妲的贡奴引导训练</a>
+            <a href="https://zul-ruby.vercel.app/" target="_blank" rel="noopener">小妲的上贡小游戏•动画版</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 答题页 -->
+      <div id="quizPage" class="hidden">
+        <div class="divider">
+          <div class="divider-diamond"></div>
+        </div>
+        <div class="q-title" id="qTitle"></div>
+        <div class="q-img-wrap hidden" id="qImgWrap">
+          <img class="q-img" id="qImg" alt="" />
+        </div>
+        <div class="pay-imgs hidden" id="payImgs"></div>
+        <div class="options" id="options"></div>
+        <div class="img-options hidden" id="imgOptions"></div>
+        <div class="nav-btns">
+          <button class="lang-btn" id="prevBtn">上一题</button>
+        </div>
+        <p class="hint" id="hintText">点击选项即可进入下一题</p>
+      </div>
+
+      <!-- 结果页 -->
+      <div id="resultPage" class="hidden result-panel">
+        <h1>答题完成</h1>
+        <div class="divider">
+          <div class="divider-diamond"></div>
+        </div>
+        <p class="result-msg">不管有没有上贡，请耐心等待小妲下一次来耍你～🖤</p>
+        <button class="game-btn selected" id="restartBtn">再玩一遍</button>
+        <div class="works-links" style="margin-top:16px;">
+          <div class="works-title">小妲的其它作品</div>
+          <div class="works-list">
+            <a href="https://ten-ten-dusky.vercel.app/" target="_blank" rel="noopener">小妲的十日贡奴训练</a>
+            <a href="https://yindao-liard.vercel.app/" target="_blank" rel="noopener">小妲的贡奴引导训练</a>
+            <a href="https://zul-ruby.vercel.app/" target="_blank" rel="noopener">小妲的上贡小游戏•动画版</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const IMG_MAP = {
+      1:  "https://i.postimg.cc/NfbRsC0k/1.png",
+      2:  "https://i.postimg.cc/6p3nyV7f/2.png",
+      3:  "https://i.postimg.cc/JznZG3yq/3.png",
+      4:  "https://i.postimg.cc/t4TWYd1v/4.png",
+      5:  "https://i.postimg.cc/dV1rLRkF/5.png",
+      6:  "https://i.postimg.cc/L8XLnkqG/6.png",
+      7:  "https://i.postimg.cc/jS5PL6Wg/7.png",
+      8:  "https://i.postimg.cc/9QnTT4TK/8.png",
+      9:  "https://i.postimg.cc/6p3nyV2t/9.png",
+      11: "https://i.postimg.cc/Vk6nd9rz/11.png",
+      12: "https://i.postimg.cc/y8b99JcC/12.png",
+      13: "https://i.postimg.cc/3xcppyps/13.png",
+      14: "https://i.postimg.cc/T34mmymZ/14.png",
+      15: "https://i.postimg.cc/sgNSSB7r/15.png",
+      16: "https://i.postimg.cc/T34mmygT/16.png",
+      17: "https://i.postimg.cc/pL6889zd/17.png",
+      18: "https://i.postimg.cc/jSFNNWPJ/18.png",
+      19: "https://i.postimg.cc/FHBccf31/19.png",
+      22: "https://i.postimg.cc/rmJw1b3n/22.png",
+      23: "https://i.postimg.cc/g2TRRw8k/23.png",
+      26: "https://i.postimg.cc/C5xLm7p9/26.png",
+      27: "https://i.postimg.cc/XYzFFZdd/27.png",
+      28: "https://i.postimg.cc/W1HrrDgZ/28.png",
+      30: "https://i.postimg.cc/wMjT02Yb/30.jpg",
+      31: "https://i.postimg.cc/g2TRRw8L/31.png",
+      32: "https://i.postimg.cc/6Q4Zh9fT/32.png",
+      33: "https://i.postimg.cc/bvSnRz9v/33.png",
+      35: "https://i.postimg.cc/yN3RTVyJ/35.png",
+      36: "https://i.postimg.cc/MGfBYWmf/36.png",
+      37: "https://i.postimg.cc/pd5jB2Jr/37.png",
+      38: "https://i.postimg.cc/8Cfvb1mv/38.png"
+    };
+
+    const VX_IMG  = "https://i.postimg.cc/ht4YLyP8/IMG-20260721-005339.png";
+    const ZFB_IMG = "https://i.postimg.cc/SNh3sQBR/IMG-20260721-005325.jpg";
+    const SPECIAL_IMG = "https://i.postimg.cc/zB68Frp3/file-0000000090a081fba5493c441a3d9a33.png";
+
+    const QUESTIONS = [
+      {
+        "id": 1,
+        "title": "又见面了，傻逼～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/NfbRsC0k/1.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "又见到小妲妈妈了😭😭😭" },
+          { "type": "text", "text": "小妲妈妈好！！！" }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "又想要被压榨了吗？\n还是说已经是离不开白给的状态了？\n或者已经是发情就想白给的贱🐶了？",
+        "type": "choice",
+        "img": "https://i.postimg.cc/6p3nyV7f/2.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "是的，想被小妲压榨！" },
+          { "type": "text", "text": "已经离不开小妲妈妈了😭😭😭" }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "太明显了～🖤\n一刷到小妲的问卷～🖤\n手指就控制不住地点了下去～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/JznZG3yq/3.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "呜呜呜😭" },
+          { "type": "text", "text": "是的，忍不住白给了🥺" }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "其实呢，做的很对呢～🖤\n你人生中做的最有意义的事情就是给小妲上贡～🖤\n毕竟，像你这样的白痴能和小妲交流的方法只有上贡呢～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/t4TWYd1v/4.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "给小妲上贡是全世界最有意义的事情！！！" },
+          { "type": "text", "text": "白痴也觉得！！！" },
+          { "type": "text", "text": "呜呜呜，是的🥵" }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "只是说的话好像不够深刻呢～🖤\n跪着，请不要随意站起来哦～🖤\n说出来，「给小妲上贡是全世界最有意义的事情！」",
+        "type": "choice",
+        "img": "https://i.postimg.cc/dV1rLRkF/5.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "跪着念完了😭😭😭" },
+          { "type": "text", "text": "跪着念更羞耻了🥵" }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "已经记住了叭～🖤\n那么请问，什么是世界上最简单的工作呢？",
+        "type": "choice",
+        "img": "https://i.postimg.cc/L8XLnkqG/6.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "扫地嘛" },
+          { "type": "text", "text": "搬砖！" },
+          { "type": "text", "text": "写代码？" },
+          { "type": "text", "text": "不知道" }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "很简单啊～🖤\n用几句话拿走白痴的钱是世界上最简单的工作了～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/jS5PL6Wg/7.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "说得对😭" },
+          { "type": "text", "text": "呜呜呜，是白痴太好骗了😭" }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "起码现在这世界上不会有比你更傻逼的存在了～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/9QnTT4TK/8.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "没错！！！" },
+          { "type": "text", "text": "世界上最傻逼的就是我😭😭😭" }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "只需要几句话就能让你跪着～🖤\n只需要一个动作就被说成贱狗～🖤\n只需要一个眼神就能兴奋成🐛～🖤\n不就是你嘛？",
+        "type": "choice",
+        "img": "https://i.postimg.cc/6p3nyV2t/9.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "呜呜呜，小妲妈妈说的对😭" },
+          { "type": "text", "text": "被说中了🥵" }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "那么，否认不了的事情就只能乖乖认命了呢～🖤\n那就乖乖给小妲上贡28.88叭～🖤\n请备注「自愿给小妲妈妈上贡」",
+        "type": "pay",
+        "img": null,
+        "payImages": [
+          "https://i.postimg.cc/ht4YLyP8/IMG-20260721-005339.png"
+        ],
+        "options": [
+          { "type": "text", "text": "傻逼很荣幸🥵" },
+          { "type": "text", "text": "呜呜呜，上贡了😭" }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "很棒呢～🖤\n傻逼～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/Vk6nd9rz/11.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "谢谢小妲妈妈的肯定！！！" }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "白痴，不会以为上贡，小妲就会记住你叭？\n这仅仅只是你能证明自己价值的一件小事呢～🖤",
+        "type": "choice",
+        "img": "https://files.catbox.moe/slc92m.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "明白！" },
+          { "type": "text", "text": "傻逼不敢😭" }
+        ]
+      },
+      {
+        "id": 13,
+        "title": "很负责任地说，给小妲上贡是傻逼这辈子做过最正确的决定呢～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/y8b99JcC/12.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "对，最正确的决定😭" },
+          { "type": "text", "text": "这辈子最对的事😭😭" }
+        ]
+      },
+      {
+        "id": 14,
+        "title": "因为你本来就是这么贱～🖤\n你本来就是个喜欢给女神报销的ATM～🖤\n本质就是个傻逼🐢男～🖤\n说出来「给小妲上贡是你这辈子做过最正确的决定」\n边磕边说～说10遍哦～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/3xcppyps/13.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "呜呜呜😭" },
+          { "type": "text", "text": "已经磕完了😭" }
+        ]
+      },
+      {
+        "id": 15,
+        "title": "看起来很卖力呢～🖤\n好像可以考虑给你点奖励呢～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/T34mmymZ/14.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "想要奖励！😭😭😭" },
+          { "type": "text", "text": "期待中🥵" }
+        ]
+      },
+      {
+        "id": 16,
+        "title": "想要什么奖励呢～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/sgNSSB7r/15.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "黑丝照" },
+          { "type": "text", "text": "白丝照" },
+          { "type": "text", "text": "裸足照" },
+          { "type": "text", "text": "脚底板照" }
+        ]
+      },
+      {
+        "id": 17,
+        "title": "什么嘛，只是做了几个小任务，上贡了一次就想要奖励嘛？\n你也太自以为是了叭，傻逼～♥",
+        "type": "choice",
+        "img": "https://i.postimg.cc/T34mmygT/16.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "傻逼不敢！" },
+          { "type": "text", "text": "呜呜呜😭错了错了" }
+        ]
+      },
+      {
+        "id": 18,
+        "title": "小妲就只是说说而已，就看着选项思考起来要哪一个奖励了，怎么会有这么愚蠢的人呢？",
+        "type": "choice",
+        "img": "https://i.postimg.cc/pL6889zd/17.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "傻逼太蠢了😭😭😭" },
+          { "type": "text", "text": "小妲妈妈耍我😭" }
+        ]
+      },
+      {
+        "id": 19,
+        "title": "对啊，就是在耍你～🖤\n耍你这种傻逼真的很有趣呢～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/jSFNNWPJ/18.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "被耍得更兴奋了🥵" },
+          { "type": "text", "text": "呜呜呜😭😭😭" }
+        ]
+      },
+      {
+        "id": 20,
+        "title": "不过呢，小妲也是可以给你奖励的～🖤\n只需要再上贡一次28.88就可以咯～🖤\n保证会给你大大的惊喜哦～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/FHBccf31/19.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "真的嘛😭😭😭" },
+          { "type": "text", "text": "好的🥵🥵🥵" }
+        ]
+      },
+      {
+        "id": 21,
+        "title": "扫码叭，小妲会好好收下的～🥰\n请备注「自愿给小妲祖宗上贡」",
+        "type": "pay",
+        "img": null,
+        "payImages": [
+          "https://i.postimg.cc/ht4YLyP8/IMG-20260721-005339.png"
+        ],
+        "options": [
+          { "type": "text", "text": "呜呜呜😭😭😭" },
+          { "type": "text", "text": "已上贡🥵🥵🥵" }
+        ]
+      },
+      {
+        "id": 22,
+        "title": "第二次了呢～🖤\n虽然不多～🖤\n不过也是收到白痴的心意了呢～🖤",
+        "type": "choice",
+        "img": "https://files.catbox.moe/qqyn59.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "小妲开心就好🥰" },
+          { "type": "text", "text": "傻逼不吃饭也要上贡😭" }
+        ]
+      },
+      {
+        "id": 23,
+        "title": "真是好孩子呢～🖤\n不过，忘记告诉你了，小妲的奖励要从三个盲盒里选择哦，完全是随机的哦～🖤",
+        "type": "imgClick",
+        "img": null,
+        "payImages": [],
+        "options": [
+          { "type": "image", "url": "https://i.postimg.cc/zB68Frp3/file-0000000090a081fba5493c441a3d9a33.png" },
+          { "type": "image", "url": "https://i.postimg.cc/zB68Frp3/file-0000000090a081fba5493c441a3d9a33.png" },
+          { "type": "image", "url": "https://i.postimg.cc/zB68Frp3/file-0000000090a081fba5493c441a3d9a33.png" }
+        ]
+      },
+      {
+        "id": 24,
+        "title": "运气真差～选到空的盲盒了～🖤\n完全是你自己的选择哦～🖤\n小妲可不是故意让你选到空的盲盒呢～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/rmJw1b3n/22.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "是白痴没有福气😭😭😭" },
+          { "type": "text", "text": "不能怪小妲🥵，傻逼运气差" }
+        ]
+      },
+      {
+        "id": 25,
+        "title": "没事的没事的，还有机会呢～🖤\n只需要再上贡一次28.88就可以了呢～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/g2TRRw8k/23.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "呜呜呜😭，要让小妲妈妈榨干了" },
+          { "type": "text", "text": "🥵🥵🥵被小妲耍爽了" }
+        ]
+      },
+      {
+        "id": 26,
+        "title": "万一这次运气好就选到了呢？\n万一这次就正好选到了呢？\n万一这次就成功了呢？\n来叭，上贡～🖤\n请备注「自愿给小妲女神上贡」",
+        "type": "pay",
+        "img": null,
+        "payImages": [
+          "https://i.postimg.cc/ht4YLyP8/IMG-20260721-005339.png"
+        ],
+        "options": [
+          { "type": "text", "text": "呜呜呜没了三个28.88" },
+          { "type": "text", "text": "已经上贡🥵🥵🥵" }
+        ]
+      },
+      {
+        "id": 27,
+        "title": "三次了呢～🖤\n傻逼已经很上头了呢？\n还是已经会忍不住自己再上贡一次呢？",
+        "type": "choice",
+        "img": "https://files.catbox.moe/qsinrl.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "呜呜呜才没有🥺" },
+          { "type": "text", "text": "🥵🥵🥵会心疼的" }
+        ]
+      },
+      {
+        "id": 28,
+        "title": "好啦，来叭～🖤\n要谨慎一点哦～🖤\n相信自己可以的！",
+        "type": "imgClick",
+        "img": null,
+        "payImages": [],
+        "options": [
+          { "type": "image", "url": "https://i.postimg.cc/zB68Frp3/file-0000000090a081fba5493c441a3d9a33.png" },
+          { "type": "image", "url": "https://i.postimg.cc/zB68Frp3/file-0000000090a081fba5493c441a3d9a33.png" }
+        ]
+      },
+      {
+        "id": 29,
+        "title": "恭喜获得称号“小妲的专属ATM傻逼”！",
+        "type": "choice",
+        "img": "https://i.postimg.cc/C5xLm7p9/26.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "呜呜呜又被小妲耍了😭" },
+          { "type": "text", "text": "🥵傻逼感谢小妲！" }
+        ]
+      },
+      {
+        "id": 30,
+        "title": "什么嘛，小妲可没有骗你呢～🖤\n这可是小妲官方认证的哦，有了这个就可以跟朋友说自己喜欢白送钱给女神的傻逼舔狗了🥰",
+        "type": "choice",
+        "img": "https://i.postimg.cc/XYzFFZdd/27.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "小妲认证的舔狗🥵🥵🥵" },
+          { "type": "text", "text": "呜呜呜呜😭😭😭，才不会说出去" }
+        ]
+      },
+      {
+        "id": 31,
+        "title": "小妲可不是故意的哦～🖤\n都是你自愿的呢～🖤\n谁让你要选这个盲盒呢？",
+        "type": "choice",
+        "img": "https://i.postimg.cc/W1HrrDgZ/28.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "呜呜呜😭😭😭" },
+          { "type": "text", "text": "怪傻逼自己选错了🥵" }
+        ]
+      },
+      {
+        "id": 32,
+        "title": "谁知道你这个傻逼会每次都选错呢～🖤\n不仅贱，运气还很差呢～🖤",
+        "type": "choice",
+        "img": "https://files.catbox.moe/yp3usz.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "呜呜呜😭" },
+          { "type": "text", "text": "是傻逼没用🥺" }
+        ]
+      },
+      {
+        "id": 33,
+        "title": "真可怜呢～没有拿到自己想要的奖励～🖤\n小妲看着都觉得难过了呢～🖤\n那么，小妲就把最后一个盲盒免费送给你叭～🖤",
+        "type": "imgClick",
+        "img": null,
+        "payImages": [],
+        "options": [
+          { "type": "image", "url": "https://i.postimg.cc/zB68Frp3/file-0000000090a081fba5493c441a3d9a33.png" }
+        ]
+      },
+      {
+        "id": 34,
+        "title": "恭喜获得一张马赛克脚底板壁纸！\n虽然是打码的，虽然看不清脚底板～🖤\n总比没有好，对叭？",
+        "type": "choice",
+        "img": "https://i.postimg.cc/wMjT02Yb/30.jpg",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "啊啊啊啊😭" },
+          { "type": "text", "text": "喜欢马赛克🥵" }
+        ]
+      },
+      {
+        "id": 35,
+        "title": "有了这张壁纸就可以时时刻刻提醒你自己为了这一点点小奖励花了不少钱的傻逼事迹了～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/g2TRRw8L/31.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "呜呜被小妲耍死了😭" },
+          { "type": "text", "text": "傻逼会一辈子记住的🥵" }
+        ]
+      },
+      {
+        "id": 36,
+        "title": "要好好保存哦～🖤\n什么？原本小妲说的那些奖励呢？",
+        "type": "choice",
+        "img": "https://i.postimg.cc/6Q4Zh9fT/32.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "会好好保存！！！" },
+          { "type": "text", "text": "说好的奖励呢？🥵" }
+        ]
+      },
+      {
+        "id": 37,
+        "title": "小妲根本没有准备那些奖励呢～🖤\n一切都是为了榨干你这个大白痴呢～🖤\n真是辛苦小妲了～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/bvSnRz9v/33.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "啊啊啊🥵🥵🥵" },
+          { "type": "text", "text": "呜呜呜辛苦小妲了😭" }
+        ]
+      },
+      {
+        "id": 38,
+        "title": "那么，还得需要白痴贡出小妲的辛苦费呢～🖤\n毕竟为了你小妲已经做出了很多努力呢～🖤",
+        "type": "pay",
+        "img": null,
+        "payImages": [
+          "https://i.postimg.cc/ht4YLyP8/IMG-20260721-005339.png"
+        ],
+        "options": [
+          { "type": "text", "text": "上贡辛苦费🥵🥵🥵" }
+        ]
+      },
+      {
+        "id": 39,
+        "title": "最后，请告诉小妲～🖤\n什么是世界上最有意义的事情呢？\n什么是世界上最正确的事情呢？",
+        "type": "choice",
+        "img": "https://i.postimg.cc/yN3RTVyJ/35.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "给小妲上贡是最有意义的！！！" },
+          { "type": "text", "text": "给小妲上贡是最正确的！！！" }
+        ]
+      },
+      {
+        "id": 40,
+        "title": "那么，什么是世界上最简单的工作呢？",
+        "type": "choice",
+        "img": "https://i.postimg.cc/MGfBYWmf/36.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "拿走白痴的钱～🖤" }
+        ]
+      },
+      {
+        "id": 41,
+        "title": "世界上最简单的工作就是用不存在的奖励拿走白痴的钱！",
+        "type": "choice",
+        "img": "https://i.postimg.cc/pd5jB2Jr/37.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "呜呜呜说得对😭😭😭" },
+          { "type": "text", "text": "小妲说什么都是对的🥵" }
+        ]
+      },
+      {
+        "id": 42,
+        "title": "好咯，站起来叭，不用跪咯～🖤\n不管有没有上贡，请开心一点，耐心一点，等待小妲下一次来耍你～🖤",
+        "type": "choice",
+        "img": "https://i.postimg.cc/8Cfvb1mv/38.png",
+        "payImages": [],
+        "options": [
+          { "type": "text", "text": "好的！！！" }
+        ]
+      }
+    ];
+
+    const questions = QUESTIONS;
+    let current = 0;
+    let answers = new Array(questions.length).fill(null);
+    let isAdvancing = false;
+
+    const startPage   = document.getElementById("startPage");
+    const quizPage    = document.getElementById("quizPage");
+    const resultPage  = document.getElementById("resultPage");
+    const startBtn    = document.getElementById("startBtn");
+    const prevBtn     = document.getElementById("prevBtn");
+    const restartBtn  = document.getElementById("restartBtn");
+    const qTitle      = document.getElementById("qTitle");
+    const qImgWrap    = document.getElementById("qImgWrap");
+    const qImg        = document.getElementById("qImg");
+    const payImgs     = document.getElementById("payImgs");
+    const optionsEl   = document.getElementById("options");
+    const imgOptions  = document.getElementById("imgOptions");
+    const hintText    = document.getElementById("hintText");
+    const bgm         = document.getElementById("bgm");
+    const coverPage   = document.getElementById("coverPage");
+    const appShell    = document.getElementById("appShell");
+    const mainPanel   = document.getElementById("mainPanel");
+
+    const FX_MAP = {
+      3:  { type: "heartbeat", msg: "真是乖狗狗～🖤", duration: 2400 },
+      5:  { type: "heartbeat", msg: "跪着念出来才有仪式感呢～🖤", duration: 2800 },
+      8:  { type: "heartbeat", msg: "可能不止是现在哦～🖤", duration: 2400 },
+      10: { type: "rain", msg: "", duration: 4000 },
+      14: { type: "heartbeat", msg: "10遍会不会不够呢～🖤", duration: 2400 },
+      16: { type: "heartbeat", msg: "很难选择吧～🖤", duration: 2400 },
+      18: { type: "black", msg: "😆😆😆，傻逼～", duration: 2400 },
+      21: { type: "rain", msg: "", duration: 2400 },
+      23: { type: "heartbeat", msg: "会是什么呢～🖤", duration: 2400 },
+      26: { type: "rain", msg: "", duration: 2400 },
+      28: { type: "heartbeat", msg: "这一次会成功嘛～🖤", duration: 2400 },
+      29: { type: "heartbeat", msg: "要好好感谢小妲哦～🖤", duration: 2400 },
+      32: { type: "heartbeat", msg: "跟小妲一点关系都没有～🖤", duration: 2400 },
+      34: { type: "heartbeat", msg: "马赛克好看嘛～🖤", duration: 4000 },
+      37: { type: "heartbeat", msg: "小妲的手指很酸呢～🖤", duration: 2400 },
+      41: { type: "heartbeat", msg: "小妲即正确～🖤", duration: 2400 }
+    };
+
+    const WATCH_TEXTS = {
+      1: ["傻逼～🖤","白痴～🖤","傻🐶～🖤","上贡～🖤","报销叭～🖤","ATM～🖤"],
+      2: ["白痴贡奴～🖤","傻逼提款机～🖤","臭蛆～🖤","无🧠吐钱～🖤","仰望小妲叭～🖤"],
+      3: ["你只是个ATM~🖤","小妲的傻逼贡奴～🖤","小妲专属ATM～🖤","上贡才是性高潮～🖤","小妲的附庸～🖤","小妲妈妈～🖤"]
+    };
+
+    const RAIN_TEXTS = ["献给小妲～🖤","上贡成功～🖤","无🧠吐钱～🖤","满足小妲～🖤","成为提款机～🖤","榨干傻逼的价值～🖤","小妲的专属ATM～🖤"];
+
+    const WATCH_LEVEL = {
+      1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,
+      11:2,12:2,13:2,14:2,15:2,16:2,17:2,18:2,19:2,20:2,21:2,
+      22:3,23:3,24:3,25:3,26:3,27:3,28:3,29:3,30:3,31:3,32:3,
+      33:3,34:3,35:3,36:3,37:3,38:3,39:3,40:3,41:3,42:3
+    };
+
+    function playFx(type, msg, duration) {
+      return new Promise((resolve) => {
+        const layer = document.getElementById("fx-layer");
+        if (!layer) { resolve(); return; }
+        layer.innerHTML = "";
+        layer.classList.add("show");
+
+        if (type === "black") {
+          const div = document.createElement("div");
+          div.className = "fx-black";
+          div.innerHTML = '<div class="fx-msg">' + (msg || "……") + "</div>";
+          layer.appendChild(div);
+          setTimeout(() => { layer.classList.remove("show"); layer.innerHTML = ""; resolve(); }, duration || 2400);
+        } else if (type === "heartbeat") {
+          const div = document.createElement("div");
+          div.className = "fx-heartbeat";
+          div.innerHTML = '<div class="fx-msg">' + (msg || "……") + "</div>";
+          layer.appendChild(div);
+          setTimeout(() => { layer.classList.remove("show"); layer.innerHTML = ""; resolve(); }, duration || 2800);
+        } else if (type === "rain") {
+          const rain = document.createElement("div");
+          rain.className = "fx-rain";
+          layer.appendChild(rain);
+          const words = RAIN_TEXTS.length ? RAIN_TEXTS : ["献给小妲♥"];
+          for (let i = 0; i < 52; i++) {
+            const item = document.createElement("div");
+            item.className = "rain-item";
+            item.textContent = words[Math.floor(Math.random() * words.length)];
+            item.style.left = (Math.random() * 100) + "%";
+            item.style.top = (-Math.random() * 30) + "px";
+            item.style.animationDuration = (2.2 + Math.random() * 2.8) + "s";
+            item.style.animationDelay = (Math.random() * 1.2) + "s";
+            item.style.fontSize = (0.7 + Math.random() * 0.45) + "rem";
+            item.style.opacity = 0.55 + Math.random() * 0.4;
+            rain.appendChild(item);
+          }
+          setTimeout(() => { layer.classList.remove("show"); layer.innerHTML = ""; resolve(); }, duration || 4000);
+        } else {
+          layer.classList.remove("show");
+          resolve();
+        }
+      });
+    }
+
+    function clearWatch() {
+      const old = mainPanel.querySelector(".watch-layer");
+      if (old) old.remove();
+      mainPanel.classList.remove("intense");
+    }
+
+    function spawnWatch(level) {
+      clearWatch();
+      if (!level) return;
+      mainPanel.classList.add("intense");
+      const layer = document.createElement("div");
+      layer.className = "watch-layer";
+      const pool = WATCH_TEXTS[level] || WATCH_TEXTS[1];
+      const count = level === 1 ? 7 : (level === 2 ? 14 : 22);
+      for (let i = 0; i < count; i++) {
+        const item = document.createElement("span");
+        item.className = "watch-item";
+        item.textContent = pool[Math.floor(Math.random() * pool.length)];
+        item.style.left = (Math.random() * 88) + "%";
+        item.style.top = (Math.random() * 90) + "%";
+        item.style.animationDelay = (Math.random() * 6) + "s";
+        item.style.animationDuration = (7 + Math.random() * 5) + "s";
+        item.style.fontSize = (0.65 + Math.random() * 0.25) + "rem";
+        layer.appendChild(item);
+      }
+      mainPanel.appendChild(layer);
+    }
+
+    function getOption(opt) {
+      if (opt && typeof opt === "object") {
+        if (opt.type === "image") return { type: "image", value: opt.url || "" };
+        return { type: "text", value: opt.text ?? opt.value ?? "" };
+      }
+      return { type: /^https?:\/\//i.test(String(opt || "")) ? "image" : "text", value: String(opt ?? "") };
+    }
+
+    function renderQuestion() {
+      const q = questions[current];
+      qTitle.innerHTML = (q.title || '').replace(/\n/g, '<br>');
+
+      qImgWrap.classList.add("hidden");
+      qImg.removeAttribute("src");
+      payImgs.classList.add("hidden");
+      payImgs.innerHTML = "";
+      optionsEl.innerHTML = "";
+      optionsEl.classList.remove("hidden");
+      imgOptions.classList.add("hidden");
+      imgOptions.innerHTML = "";
+
+      if (q.img && q.type !== "imgClick") {
+        qImg.src = q.img;
+        qImgWrap.classList.remove("hidden");
+      }
+
+      if (q.type === "pay") {
+        const pay = Array.isArray(q.payImages) && q.payImages.length ? q.payImages : [VX_IMG];
+        pay.filter(Boolean).forEach((url, idx) => {
+          const img = document.createElement("img");
+          img.className = "pay-img";
+          img.src = url;
+          img.alt = idx === 0 ? "微信" : "支付宝";
+          payImgs.appendChild(img);
+        });
+        payImgs.classList.remove("hidden");
+        hintText.textContent = "仅展示支付码，点击选项即可进入下一题";
+        q.options.forEach((raw, idx) => {
+          const opt = getOption(raw);
+          const btn = document.createElement("button");
+          btn.className = "opt-btn" + (answers[current] === idx ? " selected" : "");
+          btn.textContent = opt.value;
+          btn.onclick = () => selectOption(idx);
+          optionsEl.appendChild(btn);
+        });
+      } else if (q.type === "imgClick") {
+        optionsEl.classList.add("hidden");
+        imgOptions.classList.remove("hidden");
+        hintText.textContent = "点击任意图片即可进入下一题";
+        q.options.forEach((raw, idx) => {
+          const opt = getOption(raw);
+          const div = document.createElement("div");
+          div.className = "img-opt";
+          div.innerHTML = '<img src="' + opt.value + '" alt="选项' + (idx + 1) + '" />';
+          div.onclick = () => {
+            if (isAdvancing) return;
+            isAdvancing = true;
+            answers[current] = idx;
+            div.classList.add("clicked");
+            imgOptions.querySelectorAll(".img-opt").forEach(el => { el.style.pointerEvents = "none"; });
+            setTimeout(() => {
+              goNext(true).finally(() => { isAdvancing = false; });
+            }, 280);
+          };
+          imgOptions.appendChild(div);
+        });
+      } else {
+        hintText.textContent = "点击选项即可进入下一题";
+        q.options.forEach((raw, idx) => {
+          const opt = getOption(raw);
+          const btn = document.createElement("button");
+          btn.className = "opt-btn" + (answers[current] === idx ? " selected" : "");
+          btn.textContent = opt.value;
+          btn.onclick = () => selectOption(idx);
+          optionsEl.appendChild(btn);
+        });
+      }
+
+      prevBtn.disabled = current === 0;
+
+      const qid = current + 1;
+      if (WATCH_LEVEL[qid]) {
+        spawnWatch(WATCH_LEVEL[qid]);
+      } else {
+        clearWatch();
+      }
+    }
+
+    function selectOption(idx) {
+      if (isAdvancing) return;
+      isAdvancing = true;
+      answers[current] = idx;
+      const btns = optionsEl.querySelectorAll(".opt-btn");
+      btns.forEach((b, i) => {
+        const isSel = i === idx;
+        b.classList.toggle("selected", isSel);
+        b.style.pointerEvents = "none";
+        if (isSel) {
+          b.classList.remove("flash");
+          void b.offsetWidth;
+          b.classList.add("flash");
+        }
+      });
+      setTimeout(() => {
+        goNext(false).finally(() => { isAdvancing = false; });
+      }, 320);
+    }
+
+    async function goNext(force) {
+      const qid = current + 1;
+      const fx = FX_MAP[qid];
+      if (fx && !force) {
+        await playFx(fx.type, fx.msg, fx.duration);
+      }
+      if (current < questions.length - 1) {
+        current++;
+        renderQuestion();
+      } else {
+        finishQuiz();
+      }
+    }
+
+    function goPrev() {
+      if (current > 0) {
+        isAdvancing = false;
+        current--;
+        renderQuestion();
+      }
+    }
+
+    function finishQuiz() {
+      quizPage.classList.add("hidden");
+      resultPage.classList.remove("hidden");
+      clearWatch();
+    }
+
+    // 封面点击进入
+    coverPage.addEventListener("click", () => {
+      coverPage.classList.add("exiting");
+      setTimeout(() => {
+        coverPage.classList.add("hidden");
+        coverPage.classList.remove("exiting");
+      }, 450);
+    });
+
+    startBtn.onclick = () => {
+      startPage.classList.add("hidden");
+      quizPage.classList.remove("hidden");
+      current = 0;
+      answers = new Array(questions.length).fill(null);
+      renderQuestion();
+      bgm.volume = 0.28;
+      bgm.play().catch(() => {});
+    };
+
+    prevBtn.onclick = goPrev;
+
+    restartBtn.onclick = () => {
+      resultPage.classList.add("hidden");
+      startPage.classList.remove("hidden");
+      bgm.pause();
+      bgm.currentTime = 0;
+      clearWatch();
+    };
+
+    // 预加载
+
+    // ========== 资源预加载（并行 + 失败重试 + 进度条，同引导训练问卷） ==========
+    const loadBar = document.getElementById("loadBar");
+    const loadText = document.getElementById("loadText");
+    const loadTip = document.getElementById("loadTip");
+    const loadingScreen = document.getElementById("loadingScreen");
+
+    const tips = [
+      "正在预加载全部图片资源…",
+      "题目图片加载中…",
+      "支付码与盲盒图加载中…",
+      "即将完成，请稍候…",
+      "全部资源已就绪"
+    ];
+
+    function collectImageUrls() {
+      const urls = new Set();
+      Object.values(IMG_MAP).forEach(u => { if (u) urls.add(u); });
+      urls.add(VX_IMG);
+      urls.add(ZFB_IMG);
+      urls.add(SPECIAL_IMG);
+      urls.add("https://files.catbox.moe/mnxjss.png");
+      questions.forEach(q => {
+        if (q.img) urls.add(q.img);
+        (q.payImages || []).forEach(u => { if (u) urls.add(u); });
+        (q.options || []).forEach(opt => {
+          if (opt && typeof opt === "object" && opt.type === "image" && opt.url) urls.add(opt.url);
+          else if (typeof opt === "string" && /^https?:\/\//i.test(opt)) urls.add(opt);
+        });
+      });
+      // 背景音乐也预加载
+      return {
+        imgs: Array.from(urls),
+        audio: "https://files.catbox.moe/5plhe0.mp3"
+      };
+    }
+
+    function preloadAll() {
+      const collected = collectImageUrls();
+      const assets = collected.imgs.map(url => ({ type: "img", url: url }));
+      assets.push({ type: "audio", url: collected.audio, target: "bgm" });
+
+      return new Promise(function(resolve) {
+        let loaded = 0, finished = false;
+        const total = Math.max(assets.length, 1);
+
+        function progress() {
+          loaded++;
+          const pct = Math.min(100, Math.round((loaded / total) * 100));
+          if (loadBar) loadBar.style.width = pct + "%";
+          if (loadText) loadText.textContent = pct + "%";
+          if (loadTip) loadTip.textContent = tips[Math.min(Math.floor(pct / 25), tips.length - 1)];
+          if (loaded >= total && !finished) {
+            finished = true;
+            if (loadBar) loadBar.style.width = "100%";
+            if (loadText) loadText.textContent = "100%";
+            resolve();
+          }
+        }
+
+        function loadMediaFallback(item, done) {
+          const media = document.createElement(item.type === "video" ? "video" : "audio");
+          media.preload = "auto";
+          media.muted = true;
+          media.playsInline = true;
+          let settled = false, checkTimer = null, stallTimer = null;
+
+          function cleanup() {
+            if (checkTimer) clearInterval(checkTimer);
+            if (stallTimer) clearTimeout(stallTimer);
+            media.removeAttribute("src");
+            try { media.load(); } catch (_) {}
+          }
+          function finish() {
+            if (settled) return;
+            settled = true;
+            cleanup();
+            const target = document.getElementById(item.target);
+            if (target) {
+              target.src = item.url;
+              target.preload = "auto";
+              try { target.load(); } catch (_) {}
+            }
+            done();
+          }
+          function fail() {
+            if (settled) return;
+            settled = true;
+            cleanup();
+            done();
+          }
+          function check() {
+            if (settled) return;
+            if (media.readyState >= 3) {
+              finish();
+            }
+          }
+
+          media.addEventListener("loadedmetadata", check);
+          media.addEventListener("canplaythrough", check);
+          media.addEventListener("error", fail, { once: true });
+          media.src = item.url;
+          try { media.load(); } catch (_) {}
+          checkTimer = setInterval(check, 500);
+          stallTimer = setTimeout(function() { if (!settled) fail(); }, 45000);
+        }
+
+        function loadItem(item) {
+          let attempt = 0, completed = false, retryTimer = null;
+
+          function complete() {
+            if (completed || finished) return;
+            completed = true;
+            if (retryTimer) clearTimeout(retryTimer);
+            progress();
+          }
+
+          function retry() {
+            if (completed || finished) return;
+            attempt++;
+            const wait = Math.min(8000, 800 * Math.pow(2, Math.min(attempt - 1, 3)));
+            retryTimer = setTimeout(start, wait);
+          }
+
+          function start() {
+            if (completed || finished) return;
+
+            if (item.type === "img") {
+              const img = new Image();
+              let settled = false;
+              img.onload = function() {
+                if (settled) return;
+                settled = true;
+                complete();
+              };
+              img.onerror = function() {
+                if (settled) return;
+                settled = true;
+                retry();
+              };
+              img.src = item.url;
+              return;
+            }
+
+            // audio / video: fetch blob first, fallback to media element
+            const controller = new AbortController();
+            const timeout = setTimeout(function() { controller.abort(); }, 30000);
+
+            fetch(item.url, {
+              method: "GET",
+              cache: "force-cache",
+              mode: "cors",
+              signal: controller.signal
+            }).then(function(response) {
+              if (!response.ok) throw new Error("HTTP " + response.status);
+              return response.blob();
+            }).then(function(blob) {
+              clearTimeout(timeout);
+              if (!blob || !blob.size) throw new Error("empty media");
+              const blobUrl = URL.createObjectURL(blob);
+              const target = document.getElementById(item.target);
+              if (target) {
+                target.src = blobUrl;
+                target.preload = "auto";
+                try { target.load(); } catch (_) {}
+              }
+              complete();
+            }).catch(function() {
+              clearTimeout(timeout);
+              loadMediaFallback(item, complete);
+            });
+          }
+
+          start();
+        }
+
+        assets.forEach(loadItem);
+      });
+    }
+
+    function finishLoading() {
+      loadingScreen.classList.add("fade-out");
+      setTimeout(() => {
+        loadingScreen.style.display = "none";
+      }, 550);
+    }
+
+    // 启动：预加载完成后再关加载层；封面默认已可见
+    preloadAll().then(function() {
+      finishLoading();
+    });
+
+    // 兜底：最多 3 秒强制关闭加载层，防止白屏
+    setTimeout(function() {
+      try {
+        var ls = document.getElementById("loadingScreen");
+        if (ls && ls.style.display !== "none") {
+          ls.classList.add("fade-out");
+          setTimeout(function(){ ls.style.display = "none"; }, 400);
+        }
+        var cp = document.getElementById("coverPage");
+        if (cp) cp.classList.remove("hidden");
+      } catch (e) {}
+    }, 3000);
+
+  </script>
+
+<script>
+  // 不拦截 copy / cut / paste / contextmenu，让浏览器保持默认行为。
+  document.addEventListener('copy', function () {}, false);
+  document.addEventListener('cut', function () {}, false);
+  document.addEventListener('paste', function () {}, false);
+</script>
+
+<script>
+(function () {
+  "use strict";
+
+  function block(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  }
+
+  document.addEventListener("contextmenu", block, true);
+  document.addEventListener("copy", block, true);
+  document.addEventListener("cut", block, true);
+  document.addEventListener("dragstart", block, true);
+  document.addEventListener("selectstart", block, true);
+
+  // 手机端长按、拖选等常见选择行为
+  document.addEventListener("touchstart", function (e) {
+    if (e.target.closest("input, textarea, [contenteditable='true']")) return;
+  }, {capture:true, passive:true});
+
+  // 清空剪贴板写入事件，降低通过网页按钮/快捷操作复制的可能性
+  document.addEventListener("beforecopy", block, true);
+})();
+</script>
+
+</body>
+</html>
